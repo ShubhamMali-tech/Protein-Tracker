@@ -1,82 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- Makes the website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Protein Tracker</title>
+
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Our CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <!-- Top navigation of the app -->
-    <header class="topbar">
-        <div class="logo">PROTEIN<span>.</span></div>
+    <!-- Sidebar -->
+    <aside class="sidebar">
 
-        <div class="date">
-            Daily Nutrition
-        </div>
-    </header>
-
-
-    <!-- Main profile section -->
-    <main class="profile-section">
-
-        <div class="intro">
-            <p class="small-text">LET'S GET STARTED</p>
-
-            <h1>Build your nutrition profile.</h1>
-
-            <p class="description">
-                Tell us a little about yourself so we can
-                calculate your daily nutrition targets.
-            </p>
+        <div class="logo">
+            PROTEIN<span>.</span>
         </div>
 
+        <nav>
 
-        <!-- Profile form -->
-        <form>
-
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your name">
-
-
-            <label>Age</label>
-            <input type="number" name="age" placeholder="Your age">
-
-
-            <label>Gender</label>
-            <select name="gender">
-                <option value="">Select gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-
-
-            <label>Weight</label>
-            <input type="number" name="weight" placeholder="Weight in kg">
-
-
-            <label>Height</label>
-            <input type="number" name="height" placeholder="Height in cm">
-
-
-            <label>Goal</label>
-            <select name="goal">
-                <option value="">Select your goal</option>
-                <option value="gain">Build Muscle</option>
-                <option value="maintain">Maintain Weight</option>
-                <option value="lose">Lose Weight</option>
-            </select>
-
-
-            <button type="submit">
-                Continue →
+            <!-- Navigation buttons -->
+            <button class="nav-btn active" onclick="showPage('dashboard', this)">
+                <span>⌂</span>
+                Dashboard
             </button>
 
-        </form>
+            <button class="nav-btn" onclick="showPage('food', this)">
+                <span>＋</span>
+                Add Food
+            </button>
+
+            <button class="nav-btn" onclick="showPage('history', this)">
+                <span>◷</span>
+                History
+            </button>
+
+            <button class="nav-btn" onclick="showPage('profile', this)">
+                <span>◎</span>
+                Profile
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Your daily nutrition companion.</p>
+        </div>
+
+    </aside>
+
+
+    <!-- Main application area -->
+    <main class="main-content">
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page active-page">
+
+            <div class="top-header">
+
+                <div>
+                    <p class="eyebrow">TODAY</p>
+                    <h1>Good morning<span class="green">.</span></h1>
+                    <p class="subtitle">Let's keep your nutrition on track.</p>
+                </div>
+
+                <div class="date-box">
+                    <span id="todayDate"></span>
+                </div>
+
+            </div>
+
+
+            <!-- Main protein card -->
+            <div class="protein-card">
+
+                <div>
+                    <p class="card-label">DAILY PROTEIN</p>
+
+                    <div class="protein-number">
+                        <span id="proteinValue">0</span>
+                        <small>/ 120 g</small>
+                    </div>
+
+                    <p class="card-subtitle">
+                        Keep going. You're building consistency.
+                    </p>
+                </div>
+
+
+                <!-- Circular progress -->
+                <div class="progress-circle">
+
+                    <div class="progress-inner">
+                        <strong id="proteinPercent">0%</strong>
+                        <span>complete</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Nutrition cards -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-title">CALORIES</span>
+                    <strong>0</strong>
+                    <span> / 2400 kcal</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-title">CARBS</span>
+                    <strong>0</strong>
+                    <span> / 280 g</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-title">FATS</span>
+                    <strong>0</strong>
+                    <span> / 70 g</span>
+                </div>
+
+            </div>
+
+
+            <!-- Meals -->
+            <div class="section-header">
+
+                <div>
+                    <p class="eyebrow">TODAY'S FOOD</p>
+                    <h2>Your meals</h2>
+                </div>
+
+                <button class="small-button" onclick="showPage('food')">
+                    + Add food
+                </button>
+
+            </div>
+
+
+            <div class="empty-state">
+
+                <div class="empty-icon">＋</div>
+
+                <h3>No meals added yet</h3>
+
+                <p>
+                    Start tracking your food to see your
+                    daily nutrition progress.
+                </p>
+
+                <button class="primary-button" onclick="showPage('food')">
+                    Add your first food
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ADD FOOD ================= -->
+
+        <section id="food" class="page">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">NUTRITION</p>
+
+                <h1>Add food<span class="green">.</span></h1>
+
+                <p class="subtitle">
+                    Record what you eat and keep your daily numbers updated.
+                </p>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <div class="form-header">
+                    <h2>Food details</h2>
+                    <p>Enter the nutrition values for your food.</p>
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group full">
+                        <label>Food name</label>
+                        <input type="text" placeholder="Example: Chicken breast">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Quantity</label>
+                        <input type="number" placeholder="100">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Unit</label>
+
+                        <select>
+                            <option>grams</option>
+                            <option>pieces</option>
+                            <option>ml</option>
+                            <option>serving</option>
+                        </select>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Protein (g)</label>
+                        <input type="number" placeholder="31">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Calories</label>
+                        <input type="number" placeholder="165">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Carbs (g)</label>
+                        <input type="number" placeholder="0">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Fats (g)</label>
+                        <input type="number" placeholder="3.6">
+                    </div>
+
+                </div>
+
+
+                <button class="primary-button large-button">
+                    Add to today's meals
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= HISTORY ================= -->
+
+        <section id="history" class="page">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">YOUR DATA</p>
+
+                <h1>History<span class="green">.</span></h1>
+
+                <p class="subtitle">
+                    Look back at your previous nutrition records.
+                </p>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <div class="history-header">
+                    <h2>Daily records</h2>
+
+                    <!-- Later Python will load actual dates -->
+                    <input type="date" id="historyDate">
+                </div>
+
+
+                <div class="history-empty">
+
+                    <div class="empty-icon">◷</div>
+
+                    <h3>No history yet</h3>
+
+                    <p>
+                        Your daily records will appear here
+                        once you start tracking.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PROFILE ================= -->
+
+        <section id="profile" class="page">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">YOUR INFORMATION</p>
+
+                <h1>Your profile<span class="green">.</span></h1>
+
+                <p class="subtitle">
+                    Your information helps us calculate your nutrition targets.
+                </p>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <div class="form-header">
+                    <h2>Personal details</h2>
+                    <p>Keep your basic information up to date.</p>
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group full">
+                        <label>Name</label>
+                        <input type="text" placeholder="Your name">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Age</label>
+                        <input type="number" placeholder="21">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Gender</label>
+
+                        <select>
+                            <option>Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Weight (kg)</label>
+                        <input type="number" placeholder="63">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Height (cm)</label>
+                        <input type="number" placeholder="175">
+                    </div>
+
+
+                    <div class="input-group full">
+                        <label>Goal</label>
+
+                        <select>
+                            <option>Select your goal</option>
+                            <option>Build Muscle</option>
+                            <option>Maintain Weight</option>
+                            <option>Lose Weight</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <button class="primary-button large-button">
+                    Save profile
+                </button>
+
+            </div>
+
+        </section>
 
     </main>
 
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
+
 </html>
