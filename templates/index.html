@@ -1,82 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protein Tracker</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>PROTEIN. — Daily Nutrition</title>
+
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Our stylesheet -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 </head>
+
 
 <body>
 
-    <!-- Top navigation of the app -->
+    <!-- Top navigation -->
     <header class="topbar">
-        <div class="logo">PROTEIN<span>.</span></div>
+
+        <div class="brand">
+
+            <div class="logo">
+                PROTEIN<span>.</span>
+            </div>
+
+            <div class="brand-subtitle">
+                Daily Nutrition
+            </div>
+
+        </div>
 
         <div class="date">
-            Daily Nutrition
+            Profile Setup
         </div>
+
     </header>
 
 
     <!-- Main profile section -->
     <main class="profile-section">
 
+        <!-- Introduction -->
         <div class="intro">
-            <p class="small-text">LET'S GET STARTED</p>
 
-            <h1>Build your nutrition profile.</h1>
+            <p class="small-text">
+                LET'S GET STARTED
+            </p>
+
+            <h1>
+                Build your nutrition profile.
+            </h1>
 
             <p class="description">
                 Tell us a little about yourself so we can
                 calculate your daily nutrition targets.
             </p>
+
         </div>
 
 
         <!-- Profile form -->
-        <form>
-
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your name">
+        <form id="profileForm">
 
 
-            <label>Age</label>
-            <input type="number" name="age" placeholder="Your age">
+            <!-- Name -->
+            <div class="field">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                >
+
+            </div>
 
 
-            <label>Gender</label>
-            <select name="gender">
-                <option value="">Select gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+            <!-- Age -->
+            <div class="field">
+
+                <label for="age">
+                    Age
+                </label>
+
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    placeholder="Your age"
+                >
+
+            </div>
 
 
-            <label>Weight</label>
-            <input type="number" name="weight" placeholder="Weight in kg">
+            <!-- Gender custom dropdown -->
+            <div class="field">
+
+                <label>
+                    Gender
+                </label>
+
+                <div class="custom-select" data-select="gender">
+
+                    <button
+                        type="button"
+                        class="select-button"
+                    >
+
+                        <span>
+                            Select gender
+                        </span>
+
+                        <span class="select-arrow">
+                            ↓
+                        </span>
+
+                    </button>
 
 
-            <label>Height</label>
-            <input type="number" name="height" placeholder="Height in cm">
+                    <div class="select-options">
+
+                        <div
+                            class="select-option"
+                            data-value="male"
+                        >
+                            Male
+                        </div>
+
+                        <div
+                            class="select-option"
+                            data-value="female"
+                        >
+                            Female
+                        </div>
+
+                    </div>
+
+                </div>
 
 
-            <label>Goal</label>
-            <select name="goal">
-                <option value="">Select your goal</option>
-                <option value="gain">Build Muscle</option>
-                <option value="maintain">Maintain Weight</option>
-                <option value="lose">Lose Weight</option>
-            </select>
+                <!-- Stores selected gender -->
+                <input
+                    type="hidden"
+                    name="gender"
+                    id="gender"
+                >
+
+            </div>
 
 
-            <button type="submit">
-                Continue →
+            <!-- Weight -->
+            <div class="field">
+
+                <label for="weight">
+                    Weight
+                </label>
+
+                <input
+                    type="number"
+                    id="weight"
+                    name="weight"
+                    placeholder="Weight in kg"
+                >
+
+            </div>
+
+
+            <!-- Height -->
+            <div class="field">
+
+                <label for="height">
+                    Height
+                </label>
+
+                <input
+                    type="number"
+                    id="height"
+                    name="height"
+                    placeholder="Height in cm"
+                >
+
+            </div>
+
+
+            <!-- Goal custom dropdown -->
+            <div class="field">
+
+                <label>
+                    Goal
+                </label>
+
+                <div class="custom-select" data-select="goal">
+
+                    <button
+                        type="button"
+                        class="select-button"
+                    >
+
+                        <span>
+                            Select your goal
+                        </span>
+
+                        <span class="select-arrow">
+                            ↓
+                        </span>
+
+                    </button>
+
+
+                    <div class="select-options">
+
+                        <div
+                            class="select-option"
+                            data-value="gain"
+                        >
+                            Build Muscle
+                        </div>
+
+                        <div
+                            class="select-option"
+                            data-value="maintain"
+                        >
+                            Maintain Weight
+                        </div>
+
+                        <div
+                            class="select-option"
+                            data-value="lose"
+                        >
+                            Lose Weight
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Stores selected goal -->
+                <input
+                    type="hidden"
+                    name="goal"
+                    id="goal"
+                >
+
+            </div>
+
+
+            <!-- Continue -->
+            <button
+                type="submit"
+                class="continue-button"
+            >
+                Continue
+                <span>→</span>
             </button>
+
 
         </form>
 
     </main>
 
+
+    <!-- JavaScript -->
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
 </body>
+
 </html>
