@@ -152,3 +152,80 @@ profileForm.addEventListener("submit", (event) => {
     console.log(profile);
 
 });
+
+
+// -----------------------------------------
+// Load saved profile
+// -----------------------------------------
+
+
+// Get the saved profile from the browser
+const savedProfile =
+    localStorage.getItem("proteinProfile");
+
+
+// Check if a profile already exists
+if (savedProfile) {
+
+    // Convert saved JSON back into an object
+    const profile =
+        JSON.parse(savedProfile);
+
+
+    // Put saved values back into the form
+    document.getElementById("name").value =
+        profile.name;
+
+    document.getElementById("age").value =
+        profile.age;
+
+    document.getElementById("gender").value =
+        profile.gender;
+
+    document.getElementById("weight").value =
+        profile.weight;
+
+    document.getElementById("height").value =
+        profile.height;
+
+    document.getElementById("goal").value =
+        profile.goal;
+
+
+    // Update the custom dropdown text
+    dropdowns.forEach((dropdown) => {
+
+        const input = document.getElementById(
+            dropdown.dataset.select
+        );
+
+        const button = dropdown.querySelector(
+            ".select-button"
+        );
+
+        const buttonText = button.querySelector(
+            "span"
+        );
+
+        const selectedOption =
+            dropdown.querySelector(
+                `.select-option[data-value="${input.value}"]`
+            );
+
+
+        // Show the saved option
+        if (selectedOption) {
+
+            buttonText.textContent =
+                selectedOption.textContent.trim();
+
+            button.classList.add("selected");
+
+        }
+
+    });
+
+
+    console.log("Profile loaded!");
+
+}
