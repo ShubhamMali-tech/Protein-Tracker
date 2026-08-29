@@ -103,22 +103,40 @@ profileForm.addEventListener("submit", (event) => {
 
     // Get values entered by the user
     const name =
-        document.getElementById("name").value;
+        document.getElementById("name").value.trim();
 
     const age =
-        document.getElementById("age").value;
+        document.getElementById("age").value.trim();
 
     const gender =
         document.getElementById("gender").value;
 
     const weight =
-        document.getElementById("weight").value;
+        document.getElementById("weight").value.trim();
 
     const height =
-        document.getElementById("height").value;
+        document.getElementById("height").value.trim();
 
     const goal =
         document.getElementById("goal").value;
+
+
+    // Check if any field is empty
+    if (
+        name === "" ||
+        age === "" ||
+        gender === "" ||
+        weight === "" ||
+        height === "" ||
+        goal === ""
+    ) {
+
+        // Tell the user to complete the form
+        alert("Please complete all fields.");
+
+        // Stop here
+        return;
+    }
 
 
     // Put all profile data into one object
