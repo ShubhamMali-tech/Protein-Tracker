@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Protein Tracker — Dashboard</title>
+
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body class="dashboard-page">
+
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+
+    <header class="dashboard-nav">
+
+        <!-- Brand -->
+        <a href="/dashboard" class="dashboard-brand">
+
+            <div class="brand-icon">
+                <span>⌁</span>
+            </div>
+
+            <div class="brand-name">
+                Protein Tracker
+            </div>
+
+        </a>
+
+
+        <!-- Navigation -->
+        <nav class="dashboard-navigation">
+
+            <a
+                href="/dashboard"
+                class="nav-link active"
+            >
+                Dashboard
+            </a>
+
+            <a
+                href="#"
+                class="nav-link"
+            >
+                Meals
+            </a>
+
+            <a
+                href="#"
+                class="nav-link"
+            >
+                Progress
+            </a>
+
+        </nav>
+
+
+        <!-- Profile -->
+        <button
+            type="button"
+            class="profile-button"
+            aria-label="Profile"
+        >
+            <span>♙</span>
+        </button>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN DASHBOARD
+         ========================================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- Dashboard heading -->
+
+        <section class="dashboard-heading">
+
+            <div>
+
+                <p class="dashboard-eyebrow">
+                    DAILY OVERVIEW
+                </p>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p class="dashboard-description">
+                    Welcome back, here's your progress today.
+                </p>
+
+            </div>
+
+
+            <!-- Log meal -->
+
+            <button
+                type="button"
+                class="log-meal-button"
+            >
+                <span class="plus-icon">+</span>
+                <span>Log Meal</span>
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================================
+             TODAY'S INTAKE
+             ========================================= -->
+
+        <section class="intake-card">
+
+            <div class="intake-header">
+
+                <div>
+
+                    <p class="card-eyebrow">
+                        TODAY'S INTAKE
+                    </p>
+
+                    <h2>
+                        Protein
+                    </h2>
+
+                </div>
+
+                <p class="goal-text">
+                    Goal <strong id="proteinGoal">140g</strong>
+                </p>
+
+            </div>
+
+
+            <div class="intake-content">
+
+                <!-- Progress circle -->
+
+                <div class="protein-circle">
+
+                    <div class="protein-circle-inner">
+
+                        <strong id="proteinConsumed">
+                            104
+                        </strong>
+
+                        <span>
+                            / 140g
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Nutrition statistics -->
+
+                <div class="nutrition-statistics">
+
+                    <div class="nutrition-stat">
+
+                        <div class="stat-icon">
+                            ♨
+                        </div>
+
+                        <div>
+
+                            <span class="stat-label">
+                                Calories
+                            </span>
+
+                            <strong>
+                                1,840
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nutrition-stat">
+
+                        <div class="stat-icon">
+                            ♆
+                        </div>
+
+                        <div>
+
+                            <span class="stat-label">
+                                Meals
+                            </span>
+
+                            <strong>
+                                4
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SECONDARY CARDS
+             ========================================= -->
+
+        <section class="dashboard-cards">
+
+
+            <!-- Consistency -->
+
+            <article class="dashboard-card">
+
+                <div class="dashboard-card-top">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            CONSISTENCY
+                        </p>
+
+                        <h2>
+                            7 day streak
+                        </h2>
+
+                    </div>
+
+                    <span class="card-symbol">
+                        ♨
+                    </span>
+
+                </div>
+
+
+                <div class="streak-content">
+
+                    <div class="streak-number">
+                        7
+                    </div>
+
+                    <p>
+                        days
+                    </p>
+
+                    <span>
+                        Keep it going.
+                    </span>
+
+                </div>
+
+
+                <div class="week-days">
+
+                    <div class="day completed">
+                        <span>✓</span>
+                        <small>S</small>
+                    </div>
+
+                    <div class="day completed">
+                        <span>✓</span>
+                        <small>M</small>
+                    </div>
+
+                    <div class="day completed">
+                        <span>✓</span>
+                        <small>T</small>
+                    </div>
+
+                    <div class="day completed">
+                        <span>✓</span>
+                        <small>W</small>
+                    </div>
+
+                    <div class="day completed">
+                        <span>✓</span>
+                        <small>T</small>
+                    </div>
+
+                    <div class="day completed">
+                        <span>✓</span>
+                        <small>F</small>
+                    </div>
+
+                    <div class="day">
+                        <span></span>
+                        <small>S</small>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Today's progress -->
+
+            <article class="dashboard-card">
+
+                <div class="dashboard-card-top">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            TODAY
+                        </p>
+
+                        <h2>
+                            Great progress
+                        </h2>
+
+                    </div>
+
+                    <span class="card-symbol">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <div class="today-progress">
+
+                    <p>
+                        <strong id="todayProtein">
+                            104g
+                        </strong>
+                        consumed
+                        <strong>
+                            74%
+                        </strong>
+                    </p>
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-bar-fill"
+                            style="width: 74%;"
+                        ></div>
+
+                    </div>
+
+                    <div class="progress-footer">
+
+                        <span>
+                            0g
+                        </span>
+
+                        <span>
+                            140g
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =========================================
+             TRACKING HISTORY
+             ========================================= -->
+
+        <section class="history-card">
+
+            <div class="history-header">
+
+                <div>
+
+                    <p class="card-eyebrow">
+                        TRACKING HISTORY
+                    </p>
+
+                    <h2>
+                        Your activity
+                    </h2>
+
+                </div>
+
+                <span>
+                    Last 140 days
+                </span>
+
+            </div>
+
+
+            <div class="history-grid">
+
+                <!-- Row 1 -->
+                <span></span>
+                <span class="level-2"></span>
+                <span class="level-3"></span>
+                <span class="level-1"></span>
+                <span class="level-4"></span>
+                <span class="level-2"></span>
+                <span class="level-3"></span>
+                <span></span>
+                <span class="level-4"></span>
+                <span class="level-2"></span>
+                <span class="level-3"></span>
+                <span></span>
+                <span class="level-2"></span>
+                <span class="level-4"></span>
+                <span class="level-3"></span>
+                <span class="level-1"></span>
+                <span class="level-4"></span>
+                <span class="level-2"></span>
+
+                <!-- Row 2 -->
+                <span class="level-2"></span>
+                <span class="level-3"></span>
+                <span class="level-2"></span>
+                <span class="level-4"></span>
+                <span class="level-1"></span>
+                <span class="level-3"></span>
+                <span class="level-4"></span>
+                <span></span>
+                <span class="level-2"></span>
+                <span class="level-3"></span>
+                <span></span>
+                <span class="level-4"></span>
+                <span class="level-2"></span>
+                <span class="level-3"></span>
+                <span class="level-1"></span>
+                <span class="level-4"></span>
+                <span></span>
+                <span class="level-2"></span>
+
+                <!-- Row 3 -->
+                <span class="level-3"></span>
+                <span></span>
+                <span class="level-2"></span>
+                <span class="level-4"></span>
+                <span class="level-1"></span>
+                <span class="level-3"></span>
+                <span class="level-2"></span>
+                <span class="level-4"></span>
+                <span class="level-3"></span>
+                <span class="level-1"></span>
+                <span class="level-4"></span>
+                <span></span>
+                <span class="level-2"></span>
+                <span class="level-3"></span>
+                <span class="level-4"></span>
+                <span class="level-2"></span>
+                <span></span>
+                <span class="level-3"></span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Dashboard JavaScript -->
+    <script>
+
+        /*
+            Load saved profile
+        */
+
+        const savedProfile =
+            localStorage.getItem("proteinProfile");
+
+
+        if (savedProfile) {
+
+            try {
+
+                const profile =
+                    JSON.parse(savedProfile);
+
+                /*
+                    Personalization will be
+                    connected to nutrition
+                    calculations later.
+                */
+
+                console.log(
+                    "Dashboard profile:",
+                    profile
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "Unable to load profile.",
+                    error
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

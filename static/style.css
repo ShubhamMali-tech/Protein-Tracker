@@ -1,13 +1,10 @@
-/*
-    PROTEIN.
-    Daily Nutrition UI
+/* =========================================================
+   PROTEIN. — DAILY NUTRITION
+   PROFILE SETUP
+   Flask / HTML / CSS
+   ========================================================= */
 
-    This file controls the visual design
-    of the profile page.
-*/
-
-
-/* ---------- Basic reset ---------- */
+/* ---------- Reset ---------- */
 
 * {
     margin: 0;
@@ -15,36 +12,34 @@
     box-sizing: border-box;
 }
 
-
-/* ---------- Page ---------- */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: "Inter", sans-serif;
-
     min-height: 100vh;
-
     background: #f3f6f1;
-
     color: #172019;
-
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 
-/* ---------- Topbar ---------- */
+/* =========================================================
+   TOP BAR
+   ========================================================= */
 
 .topbar {
-    width: 100%;
+    width: min(1200px, 90%);
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 30px 5vw;
+    padding: 30px 0;
 }
-
-
-/* ---------- Brand ---------- */
 
 .brand {
     display: flex;
@@ -52,19 +47,16 @@ body {
     gap: 14px;
 }
 
-
 .logo {
+    color: #172019;
     font-size: 20px;
     font-weight: 700;
-
     letter-spacing: -0.8px;
 }
-
 
 .logo span {
     color: #6ca36f;
 }
-
 
 .brand-subtitle {
     padding-left: 14px;
@@ -72,89 +64,86 @@ body {
     border-left: 1px solid #d9dfd9;
 
     color: #7a847c;
-
     font-size: 13px;
     font-weight: 500;
 }
-
 
 .date {
     color: #7a847c;
-
     font-size: 13px;
     font-weight: 500;
 }
 
 
-/* ---------- Main ---------- */
+/* =========================================================
+   PROFILE PAGE
+   ========================================================= */
 
 .profile-section {
     width: min(1050px, 90%);
-
     margin: 0 auto;
 
-    padding: 65px 0 100px;
+    padding: 55px 0 100px;
 }
 
 
-/* ---------- Intro ---------- */
+/* ---------- Introduction ---------- */
 
 .intro {
     max-width: 850px;
 }
 
-
 .small-text {
-    margin-bottom: 18px;
-
-    color: #67946c;
-
-    font-size: 12px;
-    font-weight: 600;
-
-    letter-spacing: 2px;
-}
-
-
-h1 {
-    max-width: 850px;
-
-    font-size: clamp(46px, 7vw, 76px);
-
-    line-height: 0.98;
-
-    letter-spacing: -4px;
-
-    font-weight: 700;
-}
-
-
-.description {
-    max-width: 650px;
-
-    margin-top: 25px;
+    margin-bottom: 14px;
 
     color: #727c74;
 
     font-size: 17px;
+    font-weight: 400;
+
+    letter-spacing: 0;
+    line-height: 1.4;
+}
+
+h1 {
+    max-width: 850px;
+    margin: 0;
+
+    color: #172019;
+
+    font-size: clamp(52px, 6.5vw, 76px);
+    font-weight: 700;
+
+    line-height: 0.98;
+    letter-spacing: -4px;
+}
+
+.description {
+    max-width: 700px;
+
+    margin-top: 15px; /* was 25px */
+
+    color: #727c74;
+
+    font-size: 17px;
+    font-weight: 400;
 
     line-height: 1.6;
 }
 
 
-/* ---------- Form ---------- */
+/* =========================================================
+   FORM
+   ========================================================= */
 
 form {
-    width: min(700px, 100%);
-
+    width: min(765px, 100%);
     margin-top: 55px;
 }
 
-
 .field {
-    margin-bottom: 23px;
+    margin-bottom: 24px;
 }
-
 
 .field label {
     display: block;
@@ -165,43 +154,50 @@ form {
 
     font-size: 13px;
     font-weight: 600;
+
+    line-height: 1.3;
 }
 
 
-/* ---------- Inputs ---------- */
+/* =========================================================
+   INPUTS
+   ========================================================= */
 
 input[type="text"],
 input[type="number"] {
     width: 100%;
+    height: 59px;
 
-    padding: 17px 18px;
+    padding: 0 19px;
 
     border: 1px solid rgba(77, 108, 82, 0.12);
-
     border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.78);
 
     color: #172019;
 
-    font-family: inherit;
-
+    font-family: "Inter", sans-serif;
     font-size: 15px;
+    font-weight: 400;
 
     outline: none;
 
     transition:
-        border-color 0.2s ease,
         background 0.2s ease,
+        border-color 0.2s ease,
         box-shadow 0.2s ease,
         transform 0.2s ease;
 }
-
 
 input::placeholder {
     color: #9aa39c;
 }
 
+input[type="text"]:hover,
+input[type="number"]:hover {
+    background: #ffffff;
+}
 
 input[type="text"]:focus,
 input[type="number"]:focus {
@@ -216,45 +212,49 @@ input[type="number"]:focus {
 }
 
 
-/* ---------- Custom dropdown ---------- */
+/* =========================================================
+   NUMBER INPUT
+   ========================================================= */
 
-.custom-select {
-    position: relative;
-
-    width: 100%;
+input[type="number"] {
+    appearance: auto;
 }
 
 
-/* Dropdown button */
+/* =========================================================
+   CUSTOM SELECT
+   ========================================================= */
+
+.custom-select {
+    position: relative;
+    width: 100%;
+}
 
 .select-button {
     width: 100%;
+    height: 59px;
 
     margin: 0;
-
-    padding: 17px 18px;
+    padding: 0 18px;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     border: 1px solid rgba(77, 108, 82, 0.12);
-
     border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.78);
 
     color: #172019;
 
     font-family: "Inter", sans-serif;
-
     font-size: 15px;
     font-weight: 500;
 
     cursor: pointer;
 
-    box-shadow: none;
+    outline: none;
 
     transition:
         background 0.2s ease,
@@ -262,68 +262,54 @@ input[type="number"]:focus {
         box-shadow 0.2s ease;
 }
 
-
-/* Button hover */
-
 .select-button:hover {
     background: #ffffff;
-
-    transform: none;
-
-    box-shadow: none;
 }
-
-
-/* Selected dropdown */
 
 .select-button.selected {
     color: #172019;
 }
 
 
-/* Arrow */
+/* ---------- Arrow ---------- */
 
 .select-arrow {
-    display: flex;
+    width: 30px;
+    height: 30px;
 
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 28px;
-    height: 28px;
 
     border-radius: 50%;
 
     background: #f0f4ef;
-
     color: #68736b;
 
     font-size: 13px;
 
     transition:
         transform 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        color 0.2s ease;
 }
-
-
-/* Arrow animation */
 
 .custom-select.open .select-arrow {
     transform: rotate(180deg);
 
     background: #e8f1e8;
-
     color: #5d9564;
 }
 
 
-/* ---------- Dropdown menu ---------- */
+/* =========================================================
+   DROPDOWN MENU
+   ========================================================= */
 
 .select-options {
     position: absolute;
 
     top: calc(100% + 9px);
-
     left: 0;
 
     width: 100%;
@@ -333,16 +319,15 @@ input[type="number"]:focus {
     background: rgba(255, 255, 255, 0.97);
 
     border: 1px solid rgba(77, 108, 82, 0.08);
-
     border-radius: 17px;
 
     box-shadow:
         0 20px 50px rgba(30, 50, 35, 0.13);
 
     backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
     opacity: 0;
-
     visibility: hidden;
 
     transform: translateY(-8px) scale(0.98);
@@ -357,19 +342,15 @@ input[type="number"]:focus {
     z-index: 50;
 }
 
-
-/* Open menu */
-
 .custom-select.open .select-options {
     opacity: 1;
-
     visibility: visible;
 
     transform: translateY(0) scale(1);
 }
 
 
-/* ---------- Dropdown options ---------- */
+/* ---------- Options ---------- */
 
 .select-option {
     padding: 13px 14px;
@@ -379,7 +360,6 @@ input[type="number"]:focus {
     color: #3f4942;
 
     font-size: 14px;
-
     font-weight: 500;
 
     cursor: pointer;
@@ -390,45 +370,36 @@ input[type="number"]:focus {
         transform 0.15s ease;
 }
 
-
-/* Option hover */
-
 .select-option:hover {
     background: #edf5ed;
-
     color: #4f8d57;
 
     transform: translateX(2px);
 }
 
 
-/* ---------- Continue button ---------- */
+/* =========================================================
+   CONTINUE BUTTON
+   ========================================================= */
 
 .continue-button {
     width: auto;
 
     margin-top: 8px;
-
     padding: 15px 20px;
 
     display: inline-flex;
-
     align-items: center;
-
     gap: 20px;
 
     border: none;
-
     border-radius: 14px;
 
     background: #172019;
-
     color: #ffffff;
 
-    font-family: inherit;
-
+    font-family: "Inter", sans-serif;
     font-size: 14px;
-
     font-weight: 600;
 
     cursor: pointer;
@@ -439,13 +410,11 @@ input[type="number"]:focus {
         background 0.2s ease;
 }
 
-
 .continue-button span {
     font-size: 17px;
 
     transition: transform 0.2s ease;
 }
-
 
 .continue-button:hover {
     background: #314238;
@@ -456,68 +425,107 @@ input[type="number"]:focus {
         0 12px 25px rgba(23, 32, 25, 0.16);
 }
 
-
 .continue-button:hover span {
     transform: translateX(4px);
 }
-
 
 .continue-button:active {
     transform: translateY(0);
 }
 
 
-/* ---------- Mobile ---------- */
+/* =========================================================
+   PROFILE PAGE ENTRANCE ANIMATION
+   ========================================================= */
+
+.profile-section {
+    animation: profilePageReveal 0.7s ease both;
+}
+
+@keyframes profilePageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
     .topbar {
-        padding: 22px 5%;
+        width: 90%;
+        padding: 22px 0;
     }
-
 
     .brand {
         gap: 10px;
     }
 
-
     .brand-subtitle {
         display: none;
     }
 
-
     .profile-section {
+        width: 90%;
         padding-top: 45px;
     }
 
-
     h1 {
         font-size: 48px;
-
         letter-spacing: -2.5px;
     }
 
-
     .description {
+        margin-top: 22px;
         font-size: 16px;
     }
-
 
     form {
         margin-top: 40px;
     }
 
+    .field {
+        margin-bottom: 20px;
+    }
 
     input[type="text"],
     input[type="number"],
     .select-button {
-        padding: 15px;
+        height: 56px;
     }
-
 
     .continue-button {
         width: 100%;
-
         justify-content: space-between;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .profile-section {
+        padding-top: 35px;
+    }
+
+    h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .description {
+        font-size: 15px;
     }
 }

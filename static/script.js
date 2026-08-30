@@ -245,5 +245,7 @@ if (savedProfile) {
 
 
     console.log("Profile loaded!");
+    // Open the dashboard after saving the profile
+    //window.location.href = "/dashboard";
 
 }
