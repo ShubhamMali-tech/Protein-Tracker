@@ -4,30 +4,27 @@
 */
 
 
-// Find all custom dropdowns
+// =========================================
+// CUSTOM DROPDOWNS
+// =========================================
+
 const dropdowns = document.querySelectorAll(".custom-select");
 
-
-// Add functionality to every dropdown
 dropdowns.forEach((dropdown) => {
 
-    // Get the button
     const button = dropdown.querySelector(".select-button");
-
-    // Get the text inside the button
     const buttonText = button.querySelector("span");
-
-    // Get all options
     const options = dropdown.querySelectorAll(".select-option");
 
-    // Find the hidden input
     const input = document.getElementById(
         dropdown.dataset.select
     );
 
 
-    // Open or close dropdown
-    button.addEventListener("click", () => {
+    // Open / close dropdown
+    button.addEventListener("click", (event) => {
+
+        event.stopPropagation();
 
         // Close other dropdowns
         dropdowns.forEach((otherDropdown) => {
@@ -38,13 +35,12 @@ dropdowns.forEach((dropdown) => {
 
         });
 
-        // Toggle current dropdown
         dropdown.classList.toggle("open");
 
     });
 
 
-    // Select an option
+    // Select option
     options.forEach((option) => {
 
         option.addEventListener("click", () => {
@@ -53,11 +49,11 @@ dropdowns.forEach((dropdown) => {
             buttonText.textContent =
                 option.textContent.trim();
 
-            // Store selected value
+            // Save selected value
             input.value =
                 option.dataset.value;
 
-            // Mark button as selected
+            // Mark as selected
             button.classList.add("selected");
 
             // Close dropdown
@@ -84,146 +80,188 @@ document.addEventListener("click", (event) => {
 });
 
 
-// -----------------------------------------
-// Profile form
-// -----------------------------------------
+// =========================================
+// PROFILE FORM
+// =========================================
 
-
-// Get the profile form
 const profileForm =
     document.getElementById("profileForm");
 
 
-// Run this when the user clicks Continue
-profileForm.addEventListener("submit", (event) => {
+if (profileForm) {
 
-    // Stop the page from refreshing
-    event.preventDefault();
+    profileForm.addEventListener("submit", (event) => {
 
-
-    // Get values entered by the user
-    const name =
-        document.getElementById("name").value.trim();
-
-    const age =
-        document.getElementById("age").value.trim();
-
-    const gender =
-        document.getElementById("gender").value;
-
-    const weight =
-        document.getElementById("weight").value.trim();
-
-    const height =
-        document.getElementById("height").value.trim();
-
-    const goal =
-        document.getElementById("goal").value;
+        // Prevent normal form submission
+        event.preventDefault();
 
 
-    // Check if any field is empty
-    if (
-        name === "" ||
-        age === "" ||
-        gender === "" ||
-        weight === "" ||
-        height === "" ||
-        goal === ""
-    ) {
+        // -----------------------------------------
+        // Get form values
+        // -----------------------------------------
 
-        // Tell the user to complete the form
-        alert("Please complete all fields.");
+        const name =
+            document.getElementById("name").value.trim();
 
-        // Stop here
-        return;
-    }
+        const age =
+            document.getElementById("age").value.trim();
 
+        const gender =
+            document.getElementById("gender").value;
 
-    // Put all profile data into one object
-    const profile = {
+        const weight =
+            document.getElementById("weight").value.trim();
 
-        name: name,
+        const height =
+            document.getElementById("height").value.trim();
 
-        age: age,
-
-        gender: gender,
-
-        weight: weight,
-
-        height: height,
-
-        goal: goal
-
-    };
+        const goal =
+            document.getElementById("goal").value;
 
 
-    // Save the profile in the browser
-    localStorage.setItem(
-        "proteinProfile",
-        JSON.stringify(profile)
-    );
+        // -----------------------------------------
+        // Validate form
+        // -----------------------------------------
+
+        if (
+            name === "" ||
+            age === "" ||
+            gender === "" ||
+            weight === "" ||
+            height === "" ||
+            goal === ""
+        ) {
+
+            alert("Please complete all fields.");
+
+            return;
+        }
 
 
-    // Show the saved data in the console
-    console.log("Profile saved!");
+        // -----------------------------------------
+        // Create profile object
+        // -----------------------------------------
 
-    console.log(profile);
+        const profile = {
 
-});
+            name: name,
+            age: age,
+            gender: gender,
+            weight: weight,
+            height: height,
+            goal: goal
+
+        };
 
 
-// -----------------------------------------
-// Load saved profile
-// -----------------------------------------
+        // -----------------------------------------
+        // Save profile
+        // -----------------------------------------
+
+        localStorage.setItem(
+            "proteinProfile",
+            JSON.stringify(profile)
+        );
 
 
-// Get the saved profile from the browser
+        console.log("Profile saved!");
+        console.log(profile);
+
+
+        // -----------------------------------------
+        // GO TO DASHBOARD
+        // -----------------------------------------
+
+        window.location.href = "/dashboard";
+
+    });
+
+}
+
+
+// =========================================
+// LOAD SAVED PROFILE
+// =========================================
+
 const savedProfile =
     localStorage.getItem("proteinProfile");
 
 
-// Check if a profile already exists
 if (savedProfile) {
 
-    // Convert saved JSON back into an object
     const profile =
         JSON.parse(savedProfile);
 
 
-    // Put saved values back into the form
-    document.getElementById("name").value =
-        profile.name;
+    // Fill normal inputs
+    const nameInput =
+        document.getElementById("name");
 
-    document.getElementById("age").value =
-        profile.age;
+    const ageInput =
+        document.getElementById("age");
 
-    document.getElementById("gender").value =
-        profile.gender;
+    const weightInput =
+        document.getElementById("weight");
 
-    document.getElementById("weight").value =
-        profile.weight;
-
-    document.getElementById("height").value =
-        profile.height;
-
-    document.getElementById("goal").value =
-        profile.goal;
+    const heightInput =
+        document.getElementById("height");
 
 
-    // Update the custom dropdown text
+    if (nameInput) {
+        nameInput.value = profile.name || "";
+    }
+
+    if (ageInput) {
+        ageInput.value = profile.age || "";
+    }
+
+    if (weightInput) {
+        weightInput.value = profile.weight || "";
+    }
+
+    if (heightInput) {
+        heightInput.value = profile.height || "";
+    }
+
+
+    // Fill hidden select inputs
+    const genderInput =
+        document.getElementById("gender");
+
+    const goalInput =
+        document.getElementById("goal");
+
+
+    if (genderInput) {
+        genderInput.value =
+            profile.gender || "";
+    }
+
+    if (goalInput) {
+        goalInput.value =
+            profile.goal || "";
+    }
+
+
+    // Update custom dropdown UI
     dropdowns.forEach((dropdown) => {
 
-        const input = document.getElementById(
-            dropdown.dataset.select
-        );
+        const input =
+            document.getElementById(
+                dropdown.dataset.select
+            );
 
-        const button = dropdown.querySelector(
-            ".select-button"
-        );
+        const button =
+            dropdown.querySelector(".select-button");
 
-        const buttonText = button.querySelector(
-            "span"
-        );
+        const buttonText =
+            button.querySelector("span");
+
+
+        if (!input) {
+            return;
+        }
+
 
         const selectedOption =
             dropdown.querySelector(
@@ -231,7 +269,6 @@ if (savedProfile) {
             );
 
 
-        // Show the saved option
         if (selectedOption) {
 
             buttonText.textContent =
@@ -242,10 +279,5 @@ if (savedProfile) {
         }
 
     });
-
-
-    console.log("Profile loaded!");
-    // Open the dashboard after saving the profile
-    //window.location.href = "/dashboard";
 
 }

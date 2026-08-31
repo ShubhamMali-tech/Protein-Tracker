@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Protein Tracker — Dashboard</title>
+    <title>PROTEIN. — Dashboard</title>
 
-    <!-- Inter -->
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -16,88 +16,76 @@
         rel="stylesheet"
     >
 
-    <!-- Main stylesheet -->
+    <!-- Dashboard CSS -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
+        href="{{ url_for('static', filename='dashboard.css') }}"
     >
 </head>
 
-<body class="dashboard-page">
+
+<body>
 
     <!-- =========================================
-         NAVIGATION
-         ========================================= -->
+         NAVBAR
+    ========================================== -->
 
     <header class="dashboard-nav">
 
-        <!-- Brand -->
-        <a href="/dashboard" class="dashboard-brand">
+        <div class="nav-inner">
 
-            <div class="brand-icon">
-                <span>⌁</span>
-            </div>
-
-            <div class="brand-name">
-                Protein Tracker
-            </div>
-
-        </a>
-
-
-        <!-- Navigation -->
-        <nav class="dashboard-navigation">
-
-            <a
-                href="/dashboard"
-                class="nav-link active"
-            >
-                Dashboard
+            <!-- Brand -->
+            <a href="/" class="brand">
+                <span class="brand-icon">⌁</span>
+                <span>PROTEIN<span class="brand-dot">.</span></span>
             </a>
 
-            <a
-                href="#"
-                class="nav-link"
-            >
-                Meals
-            </a>
 
-            <a
-                href="#"
-                class="nav-link"
-            >
-                Progress
-            </a>
+            <!-- Navigation -->
+            <nav class="main-nav">
 
-        </nav>
+                <a href="/dashboard" class="active">
+                    Dashboard
+                </a>
+
+                <a href="#">
+                    Meals
+                </a>
+
+                <a href="#">
+                    Progress
+                </a>
+
+            </nav>
 
 
-        <!-- Profile -->
-        <button
-            type="button"
-            class="profile-button"
-            aria-label="Profile"
-        >
-            <span>♙</span>
-        </button>
+            <!-- Profile -->
+            <button class="profile-button" aria-label="Profile">
+                ◌
+            </button>
+
+        </div>
 
     </header>
 
 
+
     <!-- =========================================
-         MAIN DASHBOARD
-         ========================================= -->
+         MAIN
+    ========================================== -->
 
-    <main class="dashboard-main">
+    <main class="dashboard-container">
 
 
-        <!-- Dashboard heading -->
+        <!-- =====================================
+             HERO
+        ====================================== -->
 
-        <section class="dashboard-heading">
+        <section class="dashboard-hero">
 
-            <div>
+            <div class="hero-content">
 
-                <p class="dashboard-eyebrow">
+                <p class="section-label">
                     DAILY OVERVIEW
                 </p>
 
@@ -105,121 +93,178 @@
                     Dashboard
                 </h1>
 
-                <p class="dashboard-description">
+                <p class="hero-description">
                     Welcome back, here's your progress today.
                 </p>
 
             </div>
 
 
-            <!-- Log meal -->
+            <button class="log-meal-button">
 
-            <button
-                type="button"
-                class="log-meal-button"
-            >
-                <span class="plus-icon">+</span>
-                <span>Log Meal</span>
+                <span class="button-plus">+</span>
+
+                <span>
+                    Log Meal
+                </span>
+
+                <span class="button-arrow">
+                    →
+                </span>
+
             </button>
 
         </section>
 
 
 
-        <!-- =========================================
+        <!-- =====================================
              TODAY'S INTAKE
-             ========================================= -->
+        ====================================== -->
 
-        <section class="intake-card">
+        <section class="intake-section">
 
-            <div class="intake-header">
-
-                <div>
-
-                    <p class="card-eyebrow">
-                        TODAY'S INTAKE
-                    </p>
-
-                    <h2>
-                        Protein
-                    </h2>
-
-                </div>
-
-                <p class="goal-text">
-                    Goal <strong id="proteinGoal">140g</strong>
-                </p>
-
-            </div>
+            <p class="section-label">
+                TODAY'S INTAKE
+            </p>
 
 
-            <div class="intake-content">
+            <div class="intake-grid">
 
-                <!-- Progress circle -->
 
-                <div class="protein-circle">
+                <!-- PROTEIN -->
 
-                    <div class="protein-circle-inner">
+                <article class="metric-card">
 
-                        <strong id="proteinConsumed">
-                            104
-                        </strong>
+                    <div class="metric-top">
 
-                        <span>
-                            / 140g
+                        <div class="metric-icon">
+                            ◒
+                        </div>
+
+                        <span class="metric-name">
+                            Protein
                         </span>
 
                     </div>
 
-                </div>
+
+                    <div class="metric-value">
+                        104<span>g</span>
+                    </div>
 
 
-                <!-- Nutrition statistics -->
+                    <div class="metric-subtitle">
+                        Goal&nbsp; <strong>140g</strong>
+                    </div>
 
-                <div class="nutrition-statistics">
 
-                    <div class="nutrition-stat">
+                    <div class="progress-bar">
 
-                        <div class="stat-icon">
-                            ♨
-                        </div>
-
-                        <div>
-
-                            <span class="stat-label">
-                                Calories
-                            </span>
-
-                            <strong>
-                                1,840
-                            </strong>
-
-                        </div>
+                        <div
+                            class="progress-fill"
+                            style="width: 74%;"
+                        ></div>
 
                     </div>
 
 
-                    <div class="nutrition-stat">
+                    <div class="progress-text">
+                        104 / 140g
+                    </div>
 
-                        <div class="stat-icon">
-                            ♆
+                </article>
+
+
+
+                <!-- CALORIES -->
+
+                <article class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon">
+                            ◎
                         </div>
 
-                        <div>
-
-                            <span class="stat-label">
-                                Meals
-                            </span>
-
-                            <strong>
-                                4
-                            </strong>
-
-                        </div>
+                        <span class="metric-name">
+                            Calories
+                        </span>
 
                     </div>
 
-                </div>
+
+                    <div class="metric-value">
+                        1,840
+                    </div>
+
+
+                    <div class="metric-subtitle">
+                        Daily target&nbsp; <strong>2,400</strong>
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            style="width: 77%;"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="progress-text">
+                        77% consumed
+                    </div>
+
+                </article>
+
+
+
+                <!-- MEALS -->
+
+                <article class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon">
+                            ◇
+                        </div>
+
+                        <span class="metric-name">
+                            Meals
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-value">
+                        4
+                    </div>
+
+
+                    <div class="metric-subtitle">
+                        Meals logged today
+                    </div>
+
+
+                    <div class="meal-dots">
+
+                        <span class="dot filled"></span>
+                        <span class="dot filled"></span>
+                        <span class="dot filled"></span>
+                        <span class="dot filled"></span>
+                        <span class="dot"></span>
+
+                    </div>
+
+
+                    <div class="progress-text">
+                        4 of 5 meals
+                    </div>
+
+                </article>
 
             </div>
 
@@ -227,56 +272,49 @@
 
 
 
-        <!-- =========================================
-             SECONDARY CARDS
-             ========================================= -->
+        <!-- =====================================
+             CONSISTENCY
+        ====================================== -->
 
-        <section class="dashboard-cards">
-
-
-            <!-- Consistency -->
-
-            <article class="dashboard-card">
-
-                <div class="dashboard-card-top">
-
-                    <div>
-
-                        <p class="card-eyebrow">
-                            CONSISTENCY
-                        </p>
-
-                        <h2>
-                            7 day streak
-                        </h2>
-
-                    </div>
-
-                    <span class="card-symbol">
-                        ♨
-                    </span>
-
-                </div>
+        <section class="consistency-card">
 
 
-                <div class="streak-content">
+            <div class="consistency-header">
 
-                    <div class="streak-number">
-                        7
-                    </div>
+                <div>
 
-                    <p>
-                        days
+                    <p class="section-label">
+                        CONSISTENCY
                     </p>
 
-                    <span>
-                        Keep it going.
-                    </span>
+                    <h2>
+                        7 day streak
+                    </h2>
 
                 </div>
 
 
-                <div class="week-days">
+                <div class="streak-number">
+
+                    <strong>7</strong>
+
+                    <span>
+                        days
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="streak-bottom">
+
+                <p>
+                    Keep it going.
+                </p>
+
+
+                <div class="week">
 
                     <div class="day completed">
                         <span>✓</span>
@@ -315,214 +353,204 @@
 
                 </div>
 
-            </article>
-
-
-
-            <!-- Today's progress -->
-
-            <article class="dashboard-card">
-
-                <div class="dashboard-card-top">
-
-                    <div>
-
-                        <p class="card-eyebrow">
-                            TODAY
-                        </p>
-
-                        <h2>
-                            Great progress
-                        </h2>
-
-                    </div>
-
-                    <span class="card-symbol">
-                        ↗
-                    </span>
-
-                </div>
-
-
-                <div class="today-progress">
-
-                    <p>
-                        <strong id="todayProtein">
-                            104g
-                        </strong>
-                        consumed
-                        <strong>
-                            74%
-                        </strong>
-                    </p>
-
-                    <div class="progress-bar">
-
-                        <div
-                            class="progress-bar-fill"
-                            style="width: 74%;"
-                        ></div>
-
-                    </div>
-
-                    <div class="progress-footer">
-
-                        <span>
-                            0g
-                        </span>
-
-                        <span>
-                            140g
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
+            </div>
 
         </section>
 
 
 
-        <!-- =========================================
-             TRACKING HISTORY
-             ========================================= -->
+        <!-- =====================================
+             TODAY'S PROGRESS
+        ====================================== -->
 
-        <section class="history-card">
+        <section class="progress-card">
 
-            <div class="history-header">
+            <div class="progress-heading">
 
                 <div>
 
-                    <p class="card-eyebrow">
-                        TRACKING HISTORY
+                    <p class="section-label">
+                        TODAY
                     </p>
 
                     <h2>
-                        Your activity
+                        Great progress
                     </h2>
 
                 </div>
 
-                <span>
-                    Last 140 days
-                </span>
+
+                <div class="progress-percentage">
+                    74%
+                </div>
 
             </div>
 
 
-            <div class="history-grid">
+            <div class="large-progress">
 
-                <!-- Row 1 -->
-                <span></span>
-                <span class="level-2"></span>
-                <span class="level-3"></span>
-                <span class="level-1"></span>
-                <span class="level-4"></span>
-                <span class="level-2"></span>
-                <span class="level-3"></span>
-                <span></span>
-                <span class="level-4"></span>
-                <span class="level-2"></span>
-                <span class="level-3"></span>
-                <span></span>
-                <span class="level-2"></span>
-                <span class="level-4"></span>
-                <span class="level-3"></span>
-                <span class="level-1"></span>
-                <span class="level-4"></span>
-                <span class="level-2"></span>
+                <div
+                    class="large-progress-fill"
+                    style="width: 74%;"
+                ></div>
 
-                <!-- Row 2 -->
-                <span class="level-2"></span>
-                <span class="level-3"></span>
-                <span class="level-2"></span>
-                <span class="level-4"></span>
-                <span class="level-1"></span>
-                <span class="level-3"></span>
-                <span class="level-4"></span>
-                <span></span>
-                <span class="level-2"></span>
-                <span class="level-3"></span>
-                <span></span>
-                <span class="level-4"></span>
-                <span class="level-2"></span>
-                <span class="level-3"></span>
-                <span class="level-1"></span>
-                <span class="level-4"></span>
-                <span></span>
-                <span class="level-2"></span>
+            </div>
 
-                <!-- Row 3 -->
-                <span class="level-3"></span>
-                <span></span>
-                <span class="level-2"></span>
-                <span class="level-4"></span>
-                <span class="level-1"></span>
-                <span class="level-3"></span>
-                <span class="level-2"></span>
-                <span class="level-4"></span>
-                <span class="level-3"></span>
-                <span class="level-1"></span>
-                <span class="level-4"></span>
-                <span></span>
-                <span class="level-2"></span>
-                <span class="level-3"></span>
-                <span class="level-4"></span>
-                <span class="level-2"></span>
-                <span></span>
-                <span class="level-3"></span>
+
+            <div class="progress-summary">
+
+                <span>
+                    104g consumed
+                </span>
+
+                <span>
+                    36g remaining
+                </span>
 
             </div>
 
         </section>
 
 
+
+        <!-- =====================================
+             TODAY'S LOG
+        ====================================== -->
+
+        <section class="today-log">
+
+            <div class="log-heading">
+
+                <h2>
+                    Today's Log
+                </h2>
+
+                <a href="#">
+                    View all →
+                </a>
+
+            </div>
+
+
+            <div class="meal-list">
+
+
+                <!-- Meal 1 -->
+
+                <article class="meal-item">
+
+                    <div>
+
+                        <div class="meal-meta">
+                            BREAKFAST
+                            <span></span>
+                            8:30 AM
+                        </div>
+
+                        <h3>
+                            Scrambled Eggs & Toast
+                        </h3>
+
+                    </div>
+
+
+                    <div class="meal-nutrition">
+
+                        <strong>
+                            24g
+                        </strong>
+
+                        <span>
+                            320 cal
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Meal 2 -->
+
+                <article class="meal-item">
+
+                    <div>
+
+                        <div class="meal-meta">
+                            LUNCH
+                            <span></span>
+                            1:15 PM
+                        </div>
+
+                        <h3>
+                            Grilled Chicken Salad
+                        </h3>
+
+                    </div>
+
+
+                    <div class="meal-nutrition">
+
+                        <strong>
+                            42g
+                        </strong>
+
+                        <span>
+                            450 cal
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Meal 3 -->
+
+                <article class="meal-item">
+
+                    <div>
+
+                        <div class="meal-meta">
+                            SNACK
+                            <span></span>
+                            4:00 PM
+                        </div>
+
+                        <h3>
+                            Whey Protein Shake
+                        </h3>
+
+                    </div>
+
+
+                    <div class="meal-nutrition">
+
+                        <strong>
+                            25g
+                        </strong>
+
+                        <span>
+                            120 cal
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
     </main>
 
 
-    <!-- Dashboard JavaScript -->
-    <script>
 
-        /*
-            Load saved profile
-        */
+    <!-- =========================================
+         DASHBOARD JAVASCRIPT
+    ========================================== -->
 
-        const savedProfile =
-            localStorage.getItem("proteinProfile");
-
-
-        if (savedProfile) {
-
-            try {
-
-                const profile =
-                    JSON.parse(savedProfile);
-
-                /*
-                    Personalization will be
-                    connected to nutrition
-                    calculations later.
-                */
-
-                console.log(
-                    "Dashboard profile:",
-                    profile
-                );
-
-            } catch (error) {
-
-                console.error(
-                    "Unable to load profile.",
-                    error
-                );
-
-            }
-
-        }
-
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 

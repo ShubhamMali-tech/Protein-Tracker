@@ -4,7 +4,10 @@
    Flask / HTML / CSS
    ========================================================= */
 
-/* ---------- Reset ---------- */
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -19,8 +22,10 @@ html {
 body {
     font-family: "Inter", sans-serif;
     min-height: 100vh;
+
     background: #f3f6f1;
     color: #172019;
+
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -49,6 +54,7 @@ body {
 
 .logo {
     color: #172019;
+
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.8px;
@@ -64,12 +70,14 @@ body {
     border-left: 1px solid #d9dfd9;
 
     color: #7a847c;
+
     font-size: 13px;
     font-weight: 500;
 }
 
 .date {
     color: #7a847c;
+
     font-size: 13px;
     font-weight: 500;
 }
@@ -84,14 +92,21 @@ body {
     margin: 0 auto;
 
     padding: 55px 0 100px;
+
+    animation: profilePageReveal 0.7s ease both;
 }
 
 
-/* ---------- Introduction ---------- */
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
 
 .intro {
     max-width: 850px;
 }
+
+
+/* Small introductory description */
 
 .small-text {
     margin-bottom: 14px;
@@ -104,6 +119,9 @@ body {
     letter-spacing: 0;
     line-height: 1.4;
 }
+
+
+/* Main heading */
 
 h1 {
     max-width: 850px;
@@ -118,10 +136,13 @@ h1 {
     letter-spacing: -4px;
 }
 
+
+/* Description below heading */
+
 .description {
     max-width: 700px;
 
-    margin-top: 15px; /* was 25px */
+    margin-top: 15px;
 
     color: #727c74;
 
@@ -138,6 +159,7 @@ h1 {
 
 form {
     width: min(765px, 100%);
+
     margin-top: 55px;
 }
 
@@ -194,10 +216,16 @@ input::placeholder {
     color: #9aa39c;
 }
 
+
+/* Input hover */
+
 input[type="text"]:hover,
 input[type="number"]:hover {
     background: #ffffff;
 }
+
+
+/* Input focus */
 
 input[type="text"]:focus,
 input[type="number"]:focus {
@@ -227,6 +255,7 @@ input[type="number"] {
 
 .custom-select {
     position: relative;
+
     width: 100%;
 }
 
@@ -253,7 +282,6 @@ input[type="number"] {
     font-weight: 500;
 
     cursor: pointer;
-
     outline: none;
 
     transition:
@@ -262,16 +290,24 @@ input[type="number"] {
         box-shadow 0.2s ease;
 }
 
+
+/* Select hover */
+
 .select-button:hover {
     background: #ffffff;
 }
+
+
+/* Selected state */
 
 .select-button.selected {
     color: #172019;
 }
 
 
-/* ---------- Arrow ---------- */
+/* =========================================================
+   SELECT ARROW
+   ========================================================= */
 
 .select-arrow {
     width: 30px;
@@ -293,6 +329,9 @@ input[type="number"] {
         background 0.2s ease,
         color 0.2s ease;
 }
+
+
+/* Arrow when dropdown opens */
 
 .custom-select.open .select-arrow {
     transform: rotate(180deg);
@@ -331,7 +370,6 @@ input[type="number"] {
     visibility: hidden;
 
     transform: translateY(-8px) scale(0.98);
-
     transform-origin: top;
 
     transition:
@@ -342,6 +380,9 @@ input[type="number"] {
     z-index: 50;
 }
 
+
+/* Open dropdown */
+
 .custom-select.open .select-options {
     opacity: 1;
     visibility: visible;
@@ -350,7 +391,9 @@ input[type="number"] {
 }
 
 
-/* ---------- Options ---------- */
+/* =========================================================
+   DROPDOWN OPTIONS
+   ========================================================= */
 
 .select-option {
     padding: 13px 14px;
@@ -369,6 +412,9 @@ input[type="number"] {
         color 0.15s ease,
         transform 0.15s ease;
 }
+
+
+/* Option hover */
 
 .select-option:hover {
     background: #edf5ed;
@@ -410,11 +456,18 @@ input[type="number"] {
         background 0.2s ease;
 }
 
+
+/* Button arrow */
+
 .continue-button span {
     font-size: 17px;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease;
 }
+
+
+/* Button hover */
 
 .continue-button:hover {
     background: #314238;
@@ -425,9 +478,15 @@ input[type="number"] {
         0 12px 25px rgba(23, 32, 25, 0.16);
 }
 
+
+/* Arrow hover */
+
 .continue-button:hover span {
     transform: translateX(4px);
 }
+
+
+/* Button click */
 
 .continue-button:active {
     transform: translateY(0);
@@ -438,11 +497,8 @@ input[type="number"] {
    PROFILE PAGE ENTRANCE ANIMATION
    ========================================================= */
 
-.profile-section {
-    animation: profilePageReveal 0.7s ease both;
-}
-
 @keyframes profilePageReveal {
+
     from {
         opacity: 0;
         transform: translateY(14px);
