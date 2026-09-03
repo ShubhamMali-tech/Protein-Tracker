@@ -7,6 +7,10 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/setup")
+def setup():
+    return render_template("setup.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
