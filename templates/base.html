@@ -1,22 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block title %}ProteinTracker{% endblock %}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
+
+    <header class="topbar">
+
+        <a href="/" class="brand">
+
+            <div class="brand-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.5 3.5C13 3.8 7.2 6.2 5.1 10.4c-1.2 2.4-.8 4.8.8 6.5 1.7 1.7 4.1 2 6.5.8 4.2-2.1 6.6-7.9 6.9-14.2Z"></path>
+                    <path d="M4 20c3.5-4.5 7.2-7.5 12-9.5"></path>
+                </svg>
+            </div>
+
+            <span class="logo">Protein Tracker</span>
+
+        </a>
+
+        <nav class="nav-links">
+            <a href="/" class="nav-link active">Home</a>
+            <a href="#" class="nav-link">How It Works</a>
+            <a href="#" class="nav-link">Features</a>
+            <a href="#" class="nav-link">Progress</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="#" class="login-link">Log In</a>
+
+            <a href="/setup" class="get-started">
+                Get Started
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </header>
 
     {% block content %}
     {% endblock %}
 
 </body>
+
 </html>
