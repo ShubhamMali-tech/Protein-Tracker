@@ -1,16 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Protein Tracker</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <h1>Protein Tracker</h1>
+{% block title %}
+ProteinTracker
+{% endblock %}
 
-    <p>
-        Track your daily protein intake.
-    </p>
+{% block content %}
 
-</body>
-</html>
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            <span>Track your protein.</span>
+            <strong>Build your consistency.</strong>
+        </h1>
+
+        <div class="hero-underline"></div>
+
+        <p>
+            Calculate your daily target, log what you eat, and track your
+            consistency over time.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/setup" class="hero-button primary">
+                Start Tracking
+                <span>→</span>
+            </a>
+
+            <a href="#" class="hero-button secondary">
+                See How It Works
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
