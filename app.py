@@ -12,7 +12,7 @@ def setup():
     return render_template("setup.html")
 @app.route("/how-it-works")
 def how_it_works():
-    return "How It Works page coming soon"
+    return render_template("how_it_works.html")
 
 
 @app.route("/features")

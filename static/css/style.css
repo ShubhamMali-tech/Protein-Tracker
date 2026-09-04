@@ -201,3 +201,34 @@ body {
     font-size: 18px;
     line-height: 1;
 }
+
+.page-section {
+    width: min(1050px, 90%);
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.page-label {
+    color: #67946c;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.page-section h1 {
+    max-width: 750px;
+    margin: 0;
+    color: #172019;
+    font-size: clamp(42px, 5vw, 60px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+}
+
+.page-description {
+    max-width: 600px;
+    margin-top: 22px;
+    color: #68766d;
+    font-size: 17px;
+    line-height: 1.55;
+}
