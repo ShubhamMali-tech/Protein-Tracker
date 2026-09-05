@@ -34,10 +34,18 @@
         </a>
 
         <nav class="nav-links">
-            <a href="/" class="nav-link active">Home</a>
-            <a href="/how-it-works" class="nav-link">How It Works</a>
-            <a href="/features" class="nav-link">Features</a>
-            <a href="/progress" class="nav-link">Progress</a>
+            <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="/how-it-works" class="nav-link {% if request.path == '/how-it-works' %}active{% endif %}">
+    How It Works
+</a>
+
+<a href="/features" class="nav-link {% if request.path == '/features' %}active{% endif %}">
+    Features
+</a>
+
+<a href="/progress" class="nav-link {% if request.path == '/progress' %}active{% endif %}">
+    Progress
+</a>
         </nav>
 
         <div class="nav-actions">
