@@ -1,0 +1,39 @@
+[33mb350d9c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m added card to the homepage & align the texts
+[33ma180c4f[m added features page
+[33me76a0f1[m added route to features section
+[33m9567942[m fixed navbar layout
+[33m33582af[m added navbar simple background to texts
+[33mc2f6809[m final how it works
+[33mad55d9c[m added how it work section
+[33medf2fbc[m add route for main navigation
+[33m3a8ed6b[m furnished buttons
+[33mec762ad[m fix fonts sizes of texts
+[33mb28ba5f[m added navbar as a base
+[33m5dd05ec[m added leaf logo
+[33m0db0893[m applied target typography
+[33m4678246[m setup page route
+[33mba21455[m create a base html
+[33m836ed46[m initialize flask
+[33m537491c[m added basic stylesheet
+[33m80dfe16[m connect authentication pages
+[33mc0b9972[m added registration page
+[33mcab61af[m added login page
+[33m146e618[m added login page
+[33m5f89e5f[m create basic homepage
+[33mc9bcccb[m understand the structure
+[33mb6f325e[m start from scratch
+[33mbc95659[m link continue to dashboard
+[33m42a8aea[m Create README.md for Protein Tracker project
+[33m477c34b[m change in alignment, texts
+[33m0cb6733[m Add profile form validation
+[33me70e892[m Load saved user profile
+[33m865e4da[m Save user profile locally
+[33mab2fb04[m change in css
+[33m6bd5c97[m added dropdown function
+[33m3bcb8d8[m change in profile setup
+[33mbfbd0d6[m Add daily nutrition basic data structure
+[33m54b6a2a[m Prepare local data storage
+[33mba8e196[m chaneg is css
+[33mbeecc13[m change alignment
+[33m5493d5d[m Initial commit - Protein Tracker
+[33m29fc8b6[m Initial commit

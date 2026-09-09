@@ -17,7 +17,7 @@ def how_it_works():
 
 @app.route("/features")
 def features():
-    return "Features page coming soon"
+    return render_template("features.html")
 
 
 @app.route("/progress")
