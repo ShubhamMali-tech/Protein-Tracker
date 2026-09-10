@@ -338,7 +338,22 @@ html {
 }
 /* Features */
 
-/* Features Icons */
+.features {
+    width: 100%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+
+    text-align: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .feature-icon {
     width: 120px;
@@ -364,4 +379,19 @@ html {
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.feature h2 {
+    margin: 0;
+    color: #172019;
+    font-size: 23px;
+    letter-spacing: -0.6px;
+}
+
+.feature p {
+    max-width: 330px;
+    margin: 18px auto 0;
+    color: #727c74;
+    font-size: 17px;
+    line-height: 1.7;
 }
