@@ -22,7 +22,7 @@ def features():
 
 @app.route("/progress")
 def progress():
-    return "Progress page coming soon"
+    return render_template("progress.html")
 
 
 @app.route("/login")

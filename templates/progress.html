@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+Progress
+{% endblock %}
+
+{% block content %}
+
+<section class="progress-page">
+
+    <div class="progress-header">
+        <h1>Your Progress</h1>
+
+        <p>
+            See how consistently you're reaching your daily protein goals.
+        </p>
+    </div>
+
+    <div class="progress-cards">
+
+        <div class="progress-card">
+            <span>Today's Protein</span>
+            <strong>0 g</strong>
+            <small>of 120 g target</small>
+        </div>
+
+        <div class="progress-card">
+            <span>Current Streak</span>
+            <strong>0 days</strong>
+            <small>Keep going</small>
+        </div>
+
+        <div class="progress-card">
+            <span>Goal Progress</span>
+            <strong>0%</strong>
+            <small>Today's progress</small>
+        </div>
+
+    </div>
+
+    <div class="consistency-card">
+
+        <h2>Consistency</h2>
+
+        <p>
+            Your daily protein tracking will appear here.
+        </p>
+
+        <div class="progress-grid">
+
+            {% for day in range(35) %}
+                <span></span>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
