@@ -1,23 +1,121 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Login-Protein Tracker</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Login</h1>
+{% extends "base.html" %}
 
-        <form>
-            <label>Email</label>
-            <input type=""email" name="email" required>
+{% block title %}
+Login
+{% endblock %}
 
-            <label>password</label>
-            <input type="password" name="password" required>
+{% block content %}
 
-            <button type="submit">
-                Login
+<section class="login-page">
+
+    <!-- Decorative leaves -->
+    <div class="login-leaf leaf-1">⌁</div>
+    <div class="login-leaf leaf-2">⌁</div>
+    <div class="login-leaf leaf-3">⌁</div>
+    <div class="login-leaf leaf-4">⌁</div>
+    <div class="login-leaf leaf-5">⌁</div>
+
+    <!-- Home link -->
+    <a href="/" class="login-home">
+        ←
+        <span>Home</span>
+    </a>
+
+    <!-- Login Card -->
+    <div class="login-card">
+
+        <!-- Logo -->
+        <div class="login-logo">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.5 3.5C13 3.8 7.2 6.2 5.1 10.4c-1.2 2.4-.8 4.8.8 6.5 1.7 1.7 4.1 2 6.5.8 4.2-2.1 6.6-7.9 6.9-14.2Z"></path>
+                <path d="M4 20c3.5-4.5 7.2-7.5 12-9.5"></path>
+            </svg>
+        </div>
+
+        <!-- Header -->
+        <div class="login-header">
+
+            <h1>Welcome back</h1>
+
+            <p>
+                Enter your details to sign in to your account
+            </p>
+
+        </div>
+
+        <!-- Form -->
+        <form class="login-form">
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label for="email">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                    required
+                >
+
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <div class="password-label">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                >
+
+            </div>
+
+            <!-- Sign in -->
+            <button
+                type="submit"
+                class="login-button"
+            >
+                Sign in
             </button>
+
         </form>
-        <br>
-        <a href="register.html">Create an account</a>    </body>
-</html>
+
+        <!-- Footer -->
+        <div class="login-footer">
+
+            <span>
+                Don't have an account?
+            </span>
+
+            <a href="/register">
+                Sign up
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Decorative circle -->
+    <div class="login-circle"></div>
+
+</section>
+
+{% endblock %}
