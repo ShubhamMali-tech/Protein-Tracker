@@ -393,17 +393,21 @@ html {
     line-height: 1.7;
 }
 /* =========================================================
-   LOGIN PAGE
+   LOGIN / REGISTER PAGE
    ========================================================= */
 
 .login-page {
-    min-height: calc(100vh - 4px);
+    min-height: 100vh;
+
     position: relative;
     overflow: hidden;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding: 60px 20px;
+    box-sizing: border-box;
 
     background:
         radial-gradient(
@@ -424,6 +428,7 @@ html {
 
 .login-home {
     position: absolute;
+
     top: 44px;
     left: 34px;
 
@@ -452,12 +457,13 @@ html {
     z-index: 3;
 
     width: 480px;
-    min-height: 610px;
 
     padding: 40px 40px 38px;
+
     box-sizing: border-box;
 
     background: rgba(255, 255, 255, 0.72);
+
     border: 1px solid rgba(255, 255, 255, 0.8);
 
     border-radius: 34px;
@@ -482,6 +488,7 @@ html {
     justify-content: center;
 
     background: #16a34a;
+
     border-radius: 17px;
 
     box-shadow:
@@ -493,8 +500,10 @@ html {
     height: 32px;
 
     fill: none;
+
     stroke: white;
     stroke-width: 1.8;
+
     stroke-linecap: round;
     stroke-linejoin: round;
 }
@@ -504,6 +513,7 @@ html {
 
 .login-header {
     text-align: center;
+
     margin-bottom: 42px;
 }
 
@@ -514,7 +524,9 @@ html {
 
     font-size: 32px;
     line-height: 1.1;
+
     letter-spacing: -1.5px;
+
     font-weight: 700;
 }
 
@@ -554,6 +566,7 @@ html {
 
 .password-label {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 }
@@ -568,6 +581,7 @@ html {
     color: #68746c;
 
     font-size: 15px;
+
     text-decoration: none;
 }
 
@@ -578,6 +592,7 @@ html {
 
 /* ---------- INPUTS ---------- */
 
+.login-form input[type="text"],
 .login-form input[type="email"],
 .login-form input[type="password"] {
     width: 100%;
@@ -588,6 +603,7 @@ html {
     box-sizing: border-box;
 
     border: 1px solid #dce4dc;
+
     border-radius: 16px;
 
     outline: none;
@@ -597,6 +613,7 @@ html {
     color: #172019;
 
     font-family: "Inter", sans-serif;
+
     font-size: 16px;
 
     transition:
@@ -619,7 +636,7 @@ html {
 }
 
 
-/* ---------- SIGN IN BUTTON ---------- */
+/* ---------- BUTTON ---------- */
 
 .login-button {
     width: 100%;
@@ -628,12 +645,15 @@ html {
     margin-top: 8px;
 
     border: none;
+
     border-radius: 26px;
 
     background: #16a34a;
+
     color: white;
 
     font-family: "Inter", sans-serif;
+
     font-size: 17px;
     font-weight: 600;
 
@@ -668,8 +688,10 @@ html {
     margin-top: 32px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 5px;
 
     color: #727c74;
@@ -681,6 +703,7 @@ html {
     color: #172019;
 
     text-decoration: none;
+
     font-weight: 500;
 }
 
@@ -769,9 +792,15 @@ html {
 @media (max-width: 700px) {
 
     .login-page {
+        min-height: 100vh;
+
         padding: 100px 20px 40px;
+
         box-sizing: border-box;
+
+        align-items: flex-start;
     }
+
 
     .login-home {
         top: 25px;
@@ -780,35 +809,52 @@ html {
         font-size: 16px;
     }
 
+
     .login-card {
         width: 100%;
         max-width: 480px;
-
-        min-height: auto;
 
         padding: 35px 25px 32px;
 
         border-radius: 28px;
     }
 
+
     .login-header h1 {
         font-size: 29px;
     }
+
 
     .login-header p {
         font-size: 15px;
     }
 
+
     .login-footer {
         font-size: 15px;
     }
+
 
     .login-circle {
         width: 280px;
         height: 280px;
     }
 
+
     .login-leaf {
         display: none;
+    }
+}
+
+
+/* ---------- SHORT SCREENS ---------- */
+
+@media (max-height: 800px) and (min-width: 701px) {
+
+    .login-page {
+        align-items: flex-start;
+
+        padding-top: 80px;
+        padding-bottom: 60px;
     }
 }

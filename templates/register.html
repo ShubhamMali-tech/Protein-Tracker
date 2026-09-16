@@ -1,24 +1,164 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Register - ProteinTracker</title>
-    </head>
-    <body>
-        <h1>
-            Create Account
-        </h1>
-        <form>
-            <label>Name</label>
-            <input type="text" name="name" required>    
-        <label>Email</label>
-            <input type="email" name="email" required>  
-            <label>Password</label>
-            <input type="password" name="password" required>
-            <button typwe="submit">
-                Create Account
-                </button>
+{% extends "base.html" %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+
+<section class="login-page">
+
+    <!-- Decorative leaves -->
+    <div class="login-leaf leaf-1">⌁</div>
+    <div class="login-leaf leaf-2">⌁</div>
+    <div class="login-leaf leaf-3">⌁</div>
+    <div class="login-leaf leaf-4">⌁</div>
+    <div class="login-leaf leaf-5">⌁</div>
+
+    <!-- Home link -->
+    <a href="/" class="login-home">
+        ←
+        <span>Home</span>
+    </a>
+
+    <!-- Signup Card -->
+    <div class="login-card">
+
+        <!-- Logo -->
+        <div class="login-logo">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                <path
+                    d="M20.5 3.5C13 3.8 7.2 6.2 5.1 10.4c-1.2 2.4-.8 4.8.8 6.5 1.7 1.7 4.1 2 6.5.8 4.2-2.1 6.6-7.9 6.9-14.2Z">
+                </path>
+
+                <path
+                    d="M4 20c3.5-4.5 7.2-7.5 12-9.5">
+                </path>
+
+            </svg>
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="login-header">
+
+            <h1>Create your account</h1>
+
+            <p>
+                Start tracking your protein and build consistency.
+            </p>
+
+        </div>
+
+
+        <!-- Signup Form -->
+        <form class="login-form">
+
+            <!-- Full Name -->
+            <div class="form-group">
+
+                <label for="name">
+                    Full name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label for="email">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+
+                <label for="confirm-password">
+                    Confirm password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm_password"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Create Account -->
+            <button
+                type="submit"
+                class="login-button"
+            >
+                Create account
+            </button>
+
         </form>
-        <br>
-        <a href="login.html">Already have an account? Login here.</a>
-    </body>
-</html>
+
+
+        <!-- Footer -->
+        <div class="login-footer">
+
+            <span>
+                Already have an account?
+            </span>
+
+            <a href="/login">
+                Sign in
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Decorative circle -->
+    <div class="login-circle"></div>
+
+</section>
+
+{% endblock %}
