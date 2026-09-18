@@ -28,7 +28,6 @@ Sign Up
         <div class="login-logo">
 
             <svg viewBox="0 0 24 24" aria-hidden="true">
-
                 <path
                     d="M20.5 3.5C13 3.8 7.2 6.2 5.1 10.4c-1.2 2.4-.8 4.8.8 6.5 1.7 1.7 4.1 2 6.5.8 4.2-2.1 6.6-7.9 6.9-14.2Z">
                 </path>
@@ -36,11 +35,9 @@ Sign Up
                 <path
                     d="M4 20c3.5-4.5 7.2-7.5 12-9.5">
                 </path>
-
             </svg>
 
         </div>
-
 
         <!-- Header -->
         <div class="login-header">
@@ -53,9 +50,12 @@ Sign Up
 
         </div>
 
-
         <!-- Signup Form -->
-        <form class="login-form">
+        <form
+            class="login-form"
+            action="{{ url_for('register') }}"
+            method="POST"
+        >
 
             <!-- Full Name -->
             <div class="form-group">
@@ -74,7 +74,6 @@ Sign Up
 
             </div>
 
-
             <!-- Email -->
             <div class="form-group">
 
@@ -91,7 +90,6 @@ Sign Up
                 >
 
             </div>
-
 
             <!-- Password -->
             <div class="form-group">
@@ -110,7 +108,6 @@ Sign Up
 
             </div>
 
-
             <!-- Confirm Password -->
             <div class="form-group">
 
@@ -128,7 +125,6 @@ Sign Up
 
             </div>
 
-
             <!-- Create Account -->
             <button
                 type="submit"
@@ -138,7 +134,6 @@ Sign Up
             </button>
 
         </form>
-
 
         <!-- Footer -->
         <div class="login-footer">
@@ -154,7 +149,6 @@ Sign Up
         </div>
 
     </div>
-
 
     <!-- Decorative circle -->
     <div class="login-circle"></div>
